@@ -69,15 +69,15 @@ public class OS
             System.out.println("Enter level");
             String level = System.console().readLine();
 
-            System.out.println("Enter Junior or Senior");
-            String memberType = System.console().readLine();
+            // System.out.println("Enter Junior or Senior");
+            // String memberType = System.console().readLine();
 
             System.out.println("Enter which balance you want to add");
             String balance = System.console().readLine();
 
             PrintStream file = new PrintStream(f);
             members.add(new Member(name, age1, disciplines, 0, 0, "minus", "minus", 0, 0, "minus", "minus", 0, 0, "minus", "minus",
-            membershipStatus, level, memberType, balance));
+            membershipStatus, level, "Senior", balance));
 
             for(int i = 0; i < members.size(); i++)
             {

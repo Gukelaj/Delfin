@@ -106,7 +106,16 @@ public class Member
 
     public String getMemberType()
     {
-        return memberType;
+        if(this.age < 18)
+        {
+            return "Junior";
+        }
+        
+        else
+        {
+            return "Senior";
+        }
+        
     }
 
     public void setMemberType(String memberType)
