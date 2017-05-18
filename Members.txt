@@ -1,1 +1,2 @@
-, Lars Larsen , 70 , Breast Crawl , 0.0 , 0.0 , 0  , 0  , 0.0 , 0.0 , 0  , 0  , 0.0 , 0.0 , 0  , 0  , Active , Elite , Senior , 600
+, Nikolaj Larsen , 18 , d , 0 , 0 , minus , minus , 0 , 0 , minus , minus , 0 , 0 , minus , minus , f , g , g , g
+, Lars Larsen , 70 , Crawl , 0 , 0 , minus , minus , 0 , 0 , minus , minus , 0 , 0 , minus , minus , Active , Elite , Senior , 100

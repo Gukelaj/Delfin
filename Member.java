@@ -4,18 +4,18 @@ public class Member
     private int age;
     private String disciplines;
 
-    private double crawlCompTime;
-    private double crawlPracTime;
+    private int crawlCompTime;
+    private int crawlPracTime;
     private String crawlComp;
     private String crawlPlacement;
 
-    private double butterflyCompTime;
-    private double butterflyPracTime;
+    private int butterflyCompTime;
+    private int butterflyPracTime;
     private String butterflyComp;
     private String butterflyPlacement;
 
-    private double breastCompTime;
-    private double breastPracTime;
+    private int breastCompTime;
+    private int breastPracTime;
     private String breastComp;
     private String breastPlacement;
 
@@ -24,9 +24,9 @@ public class Member
     private String memberType;
     private String balance;
 
-    public Member(String name, int age, String disciplines, double crawlCompTime, double crawlPracTime,
-    String crawlComp, String crawlPlacement, double butterflyCompTime, double butterflyPracTime, String butterflyComp,
-    String butterflyPlacement, double breastCompTime, double breastPracTime, String breastComp, String breastPlacement,
+    public Member(String name, int age, String disciplines, int crawlCompTime, int crawlPracTime,
+    String crawlComp, String crawlPlacement, int butterflyCompTime, int butterflyPracTime, String butterflyComp,
+    String butterflyPlacement, int breastCompTime, int breastPracTime, String breastComp, String breastPlacement,
     String membershipStatus, String level, String memberType, String balance)
     {
         this.name = name;
@@ -119,20 +119,22 @@ public class Member
         return balance;
     }
 
-    public  void setCrawlCompTime(double crawlCompTime)
+    public void setCrawlCompTime(int crawlCompTime)
     {
         this.crawlCompTime = crawlCompTime;
     }
-    public double getCrawlCompTime()
+
+    public int getCrawlCompTime()
     {
         return crawlCompTime;
     }
 
-    public void setCrawlPracTime(double crawlPracTime)
+    public void setCrawlPracTime(int crawlPracTime)
     {
         this.crawlPracTime = crawlPracTime;
     }
-    public double getCrawlPracTime()
+
+    public int getCrawlPracTime()
     {
         return crawlPracTime;
     }
@@ -141,6 +143,7 @@ public class Member
     {
         this.crawlComp = crawlComp;
     }
+
     public String getCrawlComp()
     {
         return crawlComp;
@@ -150,25 +153,28 @@ public class Member
     {
         this.crawlPlacement = crawlPlacement;
     }
+
     public String getCrawlPlacement()
     {
         return crawlPlacement;
     }
 
-    public void setBrestCompTime (double breastCompTime)
+    public void setBrestCompTime (int breastCompTime)
     {
         this.breastCompTime = breastCompTime;
     }
-    public double getBreastCompTime()
+
+    public int getBreastCompTime()
     {
         return breastCompTime;
     }
 
-    public void setBrestPracTime (double breastPracTime)
+    public void setBrestPracTime (int breastPracTime)
     {
         this.breastPracTime = breastPracTime;
     }
-    public double getBreastPracTime()
+
+    public int getBreastPracTime()
     {
         return breastPracTime;
     }
@@ -177,6 +183,7 @@ public class Member
     {
         this.breastComp = breastComp;
     }
+
     public String getBreastComp()
     {
         return breastComp;
@@ -186,25 +193,28 @@ public class Member
     {
         this.breastPlacement = breastPlacement;
     }
+
     public String getBreastPlacement()
     {
         return breastPlacement;
     }
 
-    public void setButterflyCompTime (double butterflyCompTime)
+    public void setButterflyCompTime (int butterflyCompTime)
     {
         this.butterflyCompTime = butterflyCompTime;
     }
-    public double getButterflyCompTime()
+
+    public int getButterflyCompTime()
     {
         return butterflyCompTime;
     }
 
-    public void setButterflyPracTime (double butterflyPracTime)
+    public void setButterflyPracTime (int butterflyPracTime)
     {
         this.butterflyPracTime = butterflyPracTime;
     }
-    public double getButterflyPracTime()
+
+    public int getButterflyPracTime()
     {
         return butterflyPracTime;
     }
@@ -213,6 +223,7 @@ public class Member
     {
         this.butterflyComp = butterflyComp;
     }
+
     public String getButterflyComp()
     {
         return butterflyComp;
@@ -222,6 +233,7 @@ public class Member
     {
         this.butterflyPlacement = butterflyPlacement;
     }
+
     public String getButterflyPlacement()
     {
         return butterflyPlacement;

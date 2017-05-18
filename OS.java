@@ -48,10 +48,9 @@ public class OS
        
             while(scan.hasNextLine())
             {
-                members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextDouble(), scan.nextDouble(),
-                scan.next(), scan.next(), scan.nextDouble(), scan.nextDouble(), scan.next(), scan.next(),
-                scan.nextDouble(), scan.nextDouble(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next(),
-                scan.next()));
+                members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextInt(), scan.nextInt(),
+                scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.next(), scan.next(), scan.nextInt(), 
+                scan.nextInt(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next()));
             }
 
             System.out.println("Enter name");
@@ -77,12 +76,12 @@ public class OS
             String balance = System.console().readLine();
 
             PrintStream file = new PrintStream(f);
-            members.add(new Member(name, age1, disciplines, 0, 0, "0 ", "0 ", 0, 0, "0 ", "0 ", 0, 0, "0 ", "0 ",
+            members.add(new Member(name, age1, disciplines, 0, 0, "minus", "minus", 0, 0, "minus", "minus", 0, 0, "minus", "minus",
             membershipStatus, level, memberType, balance));
 
             for(int i = 0; i < members.size(); i++)
             {
-                file.print(", " + members.get(i).getName()+ " , " + members.get(i).getAge() + " , " + 
+                file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
                 members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
                 members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
                 members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
@@ -116,9 +115,9 @@ public class OS
 
             while(scan.hasNextLine())
             {
-                members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextDouble(), scan.nextDouble(),
-                scan.next(), scan.next(), scan.nextDouble(), scan.nextDouble(), scan.next(), scan.next(),
-                scan.nextDouble(), scan.nextDouble(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next(),
+                members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextInt(), scan.nextInt(),
+                scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.next(), scan.next(),
+                scan.nextInt(), scan.nextInt(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next(),
                 scan.next()));
             }
 
