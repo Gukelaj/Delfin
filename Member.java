@@ -19,10 +19,10 @@ public class Member
     private String breastComp;
     private String breastPlacement;
 
-    private String membershipStatus;
-    private String level;
-    private String memberType;
-    private String balance;
+    private String membershipStatus; // aktiv eller passiv
+    private String level; // konkurrence eller motionist
+    private String memberType; // junior, adult og senior
+    private String balance; // penge
 
     public Member(String name, int age, String disciplines, int crawlCompTime, int crawlPracTime,
     String crawlComp, String crawlPlacement, int butterflyCompTime, int butterflyPracTime, String butterflyComp,
@@ -109,6 +109,11 @@ public class Member
         if(this.age < 18)
         {
             return "Junior";
+        }
+
+        else if (this.age > 17 && this.age < 60)
+        {
+            return "Adult";
         }
         
         else
