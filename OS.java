@@ -17,6 +17,7 @@ public class OS
             System.out.println("Swimming Club");
             System.out.println("1. Create new member");
             System.out.println("2. Search member");
+            System.out.println("3. Update (Coach)");
             String login = System.console().readLine();
             System.out.println("==========");
 
@@ -28,6 +29,10 @@ public class OS
             else if(login.equals ("2"))
             {
                 searchMember();
+            }
+            else if(login.equals ("3"))
+            {
+                updateCoach();
             }
              else
             {
@@ -143,7 +148,7 @@ public class OS
              try
         {
         
-            ArrayList<MMember> members = new ArrayList<Member>();    
+            ArrayList<Member> members = new ArrayList<Member>();    
         
             Scanner input = new Scanner(System.in);
             Scanner scan = new Scanner(f).useDelimiter("\\s*,\\s*");
@@ -186,6 +191,8 @@ public class OS
                 System.out.println("11: Your breast practice time:       " + members.get(number).getBreastPracTime());
                 System.out.println("12: What competetion you participated in:   " + members.get(number).getBreastComp());
                 System.out.println("13: Your placement in the competetion       " + members.get(number).getBreastPlacement());
+                System.out.println("14: Cancel       ");
+
                 System.out.println("########################################"); 
                 System.out.println(""); 
                 
@@ -217,7 +224,7 @@ public class OS
                         members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
                         members.get(i).getBalance());
                         
-                        if(i != movies.size() -1)
+                        if(i != members.size() -1)
                         {
                             file.println();
                         }
@@ -233,7 +240,7 @@ public class OS
                     System.out.println("============================== ");
                     members.get(number).setCrawlCompTime(crawlCompTime1);
 
-                    PrintStream file = new PrintStream(f1);
+                    PrintStream file = new PrintStream(f);
                     for(int i = 0; i < members.size(); i++)
                     {
                         file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
@@ -247,7 +254,7 @@ public class OS
                         members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
                         members.get(i).getBalance());
                         
-                        if(i != movies.size() -1)
+                        if(i != members.size() -1)
                         {
                             file.println();
                         }
@@ -256,20 +263,27 @@ public class OS
 
                 else if(option.equals("3"))
                 {
-                    System.out.print("Director: ");
-                    String director = System.console().readLine();
-                    // String director = input.next();
+                    System.out.print("Crawl practice time: ");
+                    String crawlPracTime = System.console().readLine();
+                    int crawlPracTime1 = Integer.parseInt(crawlPracTime);
                     System.out.println("============================== ");
-                    movies.get(number).setDirector(director);
+                    members.get(number).setCrawlPracTime(crawlPracTime1);
 
-                    PrintStream file = new PrintStream(f1);
-                    for(int i = 0; i < movies.size(); i++)
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
                     {
-                        file.print(", " + movies.get(i).getTitle() + " , " + movies.get(i).getYear()
-                        + " , " + movies.get(i).getDirector() + " , " + movies.get(i).getActor1()
-                        + " , " + movies.get(i).getActor2() + " , " + movies.get(i).getActor3());
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
                         
-                        if(i != movies.size() -1)
+                        if(i != members.size() -1)
                         {
                             file.println();
                         }
@@ -278,20 +292,26 @@ public class OS
 
                 else if(option.equals("4"))
                 {
-                    System.out.println("Actor 1: ");
-                    String actor1 = System.console().readLine();
-                    // String actor1 = input.next();
+                    System.out.println("Competetion you swam crawl in: ");
+                    String crawlComp1 = System.console().readLine();
                     System.out.println("============================== ");
-                    movies.get(number).setActor1(actor1);
+                    members.get(number).setCrawlComp(crawlComp1);
 
-                    PrintStream file = new PrintStream(f1);
-                    for(int i = 0; i < movies.size(); i++)
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
                     {
-                        file.print(", " + movies.get(i).getTitle() + " , " + movies.get(i).getYear()
-                        + " , " + movies.get(i).getDirector() + " , " + movies.get(i).getActor1()
-                        + " , " + movies.get(i).getActor2() + " , " + movies.get(i).getActor3());
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
                         
-                        if(i != movies.size() -1)
+                        if(i != members.size() -1)
                         {
                             file.println();
                         }
@@ -300,20 +320,26 @@ public class OS
 
                 else if (option.equals("5"))
                 {
-                    System.out.println("Actor 2: ");
-                    String actor2 = System.console().readLine();
-                    // String actor2 = input.next();
+                    System.out.println("Placement in the competetion: ");
+                    String crawlPlacement1 = System.console().readLine();
                     System.out.println("============================== ");
-                    movies.get(number).setActor2(actor2);
+                    members.get(number).setCrawlPlacement(crawlPlacement1);
 
-                    PrintStream file = new PrintStream(f1);
-                    for(int i = 0; i < movies.size(); i ++)
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i ++)
                     {
-                        file.print(", " + movies.get(i).getTitle() + " , " + movies.get(i).getYear()
-                        + " , " + movies.get(i).getDirector() + " , " + movies.get(i).getActor1()
-                        + " , " + movies.get(i).getActor2() + " , " + movies.get(i).getActor3());
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
                         
-                        if(i != movies.size() -1)
+                        if(i != members.size() -1)
                         {
                             file.println();
                         }
@@ -322,20 +348,226 @@ public class OS
                 
                 else if (option.equals("6"))
                 {
-                    System.out.println("Actor 3: ");
-                    String actor3 = System.console().readLine();
-                    // String actor3 = input.next();
+                    System.out.println("Butterfly competetion time: ");
+                    String butterflyCompTime = System.console().readLine();
+                    int butterflyCompTime1 = Integer.parseInt(butterflyCompTime);
                     System.out.println("============================== ");
-                    movies.get(number).setActor3(actor3);
+                    members.get(number).setButterflyCompTime(butterflyCompTime1);
 
-                    PrintStream file = new PrintStream(f1);
-                    for(int i = 0; i < movies.size(); i++)
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
                     {
-                        file.print(", " + movies.get(i).getTitle() + " , " + movies.get(i).getYear()
-                        + " , " + movies.get(i).getDirector() + " , " + movies.get(i).getActor1()
-                        + " , " + movies.get(i).getActor2() + " , " + movies.get(i).getActor3());
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
                         
-                        if(i != movies.size() -1)
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                } 
+
+                else if (option.equals("7"))
+                {
+                    System.out.println("Butterfly practice time: ");
+                    String butterflyPracTime = System.console().readLine();
+                    int butterflyPracTime1 = Integer.parseInt(butterflyPracTime);
+                    System.out.println("============================== ");
+                    members.get(number).setButterflyPracTime(butterflyPracTime1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                } 
+
+                 else if (option.equals("8"))
+                {
+                    System.out.println("Competetion you swam butterfly in: ");
+                    String butterflyComp1 = System.console().readLine();
+                    System.out.println("============================== ");
+                    members.get(number).setButterflyComp(butterflyComp1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                }
+
+                 else if (option.equals("9"))
+                {
+                    System.out.println("Placement in the competetion: ");
+                    String butterflyPlacement1 = System.console().readLine();
+                    System.out.println("============================== ");
+                    members.get(number).setButterflyPlacement(butterflyPlacement1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                } 
+
+                 else if (option.equals("10"))
+                {
+                    System.out.println("Breast competetion time: ");
+                    String breastCompTime = System.console().readLine();
+                    int breastCompTime1 = Integer.parseInt(breastCompTime);
+                    System.out.println("============================== ");
+                    members.get(number).setBreastCompTime(breastCompTime1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                } 
+
+                 else if (option.equals("11"))
+                {
+                    System.out.println("Breast practice time: ");
+                    String breastPracTime = System.console().readLine();
+                    int breastPracTime1 = Integer.parseInt(breastPracTime);
+                    System.out.println("============================== ");
+                    members.get(number).setBreastPracTime(breastPracTime1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                } 
+
+                 else if (option.equals("12"))
+                {
+                    System.out.println("Competetion you swam breast in: ");
+                    String breastComp1 = System.console().readLine();
+                    System.out.println("============================== ");
+                    members.get(number).setBreastComp(breastComp1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
+                        {
+                            file.println();
+                        }
+                    }
+                }  
+
+                 else if (option.equals("13"))
+                {
+                    System.out.println("Placement in the competetion: ");
+                    String breastPlacement1 = System.console().readLine();
+                    System.out.println("============================== ");
+                    members.get(number).setBreastPlacement(breastPlacement1);
+
+                    PrintStream file = new PrintStream(f);
+                    for(int i = 0; i < members.size(); i++)
+                    {
+                        file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
+                        members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
+                        members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
+                        members.get(i).getCrawlPlacement() + " , " + members.get(i).getButterflyCompTime() + " , " + 
+                        members.get(i).getButterflyPracTime() + " , " + members.get(i).getButterflyComp() + " , " +
+                        members.get(i).getButterflyPlacement() + " , " + members.get(i).getBreastCompTime() + " , " +
+                        members.get(i).getBreastPracTime() + " , " + members.get(i).getBreastComp() + " , " +
+                        members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
+                        members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
+                        members.get(i).getBalance());
+                        
+                        if(i != members.size() -1)
                         {
                             file.println();
                         }
@@ -352,6 +584,6 @@ public class OS
         {
             
         }
-        }
+    }
 
 }       

@@ -173,7 +173,7 @@ public class Member
         return crawlPlacement;
     }
 
-    public void setBrestCompTime (int breastCompTime)
+    public void setBreastCompTime (int breastCompTime)
     {
         this.breastCompTime = breastCompTime;
     }
@@ -183,7 +183,7 @@ public class Member
         return breastCompTime;
     }
 
-    public void setBrestPracTime (int breastPracTime)
+    public void setBreastPracTime (int breastPracTime)
     {
         this.breastPracTime = breastPracTime;
     }
@@ -193,7 +193,7 @@ public class Member
         return breastPracTime;
     }
 
-    public void setBrestComp (String breastComp)
+    public void setBreastComp (String breastComp)
     {
         this.breastComp = breastComp;
     }
@@ -203,7 +203,7 @@ public class Member
         return breastComp;
     }
 
-    public void setBrestPlacement (String breastPlacement)
+    public void setBreastPlacement (String breastPlacement)
     {
         this.breastPlacement = breastPlacement;
     }
