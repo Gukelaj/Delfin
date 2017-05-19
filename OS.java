@@ -574,7 +574,7 @@ public class OS
                     }
                 } 
 
-                else if (option.equals("7"))
+                else if (option.equals("14"))
                 {
                     edit = false;
                 }    
