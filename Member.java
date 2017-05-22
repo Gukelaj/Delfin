@@ -133,6 +133,11 @@ public class Member
         return balance;
     }
 
+    public void setBalance(String balance)
+    {
+        this.balance = balance;
+    }
+
     public void setCrawlCompTime(int crawlCompTime)
     {
         this.crawlCompTime = crawlCompTime;
