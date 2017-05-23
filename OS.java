@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.*;
 import java.io.*;
 import java.util.NoSuchElementException;
+import java.io.IOException;
 
 public class OS
 {
@@ -19,6 +20,8 @@ public class OS
             System.out.println("2. Search member");
             System.out.println("3. Update (Coach)");
             System.out.println("4. Update (Admin)");
+            System.out.println("5. top 5");
+            System.out.println("6. Log out");
             String login = System.console().readLine();
             System.out.println("==========");
 
@@ -38,6 +41,15 @@ public class OS
             else if(login.equals ("4"))
             {
                 updateAdmin();
+            }
+            else if(login.equals ("5"))
+            {
+                topFive();
+            }
+             else if(login.equals ("6"))
+            {
+                System.out.println("Bye bye");
+                break;    
             }
              else
             {
@@ -106,6 +118,7 @@ public class OS
                 {
                     file.println();   
                 }
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
         }
         catch (Exception e)
@@ -146,6 +159,51 @@ public class OS
         {
             System.out.println(e);
         }
+    }
+
+        public void topFive ()
+        {
+            try
+            {
+            ArrayList<Member> members = new ArrayList<Member>();    
+        
+            Scanner input = new Scanner(System.in);
+            Scanner scan = new Scanner(f).useDelimiter("\\s*,\\s*");
+
+
+            System.out.print("type elite: ");
+            String result = input.nextLine();
+            System.out.println("============================== ");
+
+            while(scan.hasNextLine())
+            {
+                members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextInt(), scan.nextInt(),
+                scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.next(), scan.next(),
+                scan.nextInt(), scan.nextInt(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next(),
+                scan.next())); 
+            }
+            boolean edit = true;
+ 
+                for(int i = 0; i < members.size(); i++)
+            {
+                if(members.get(i).toString().toLowerCase().contains(result.toLowerCase()))
+                {
+                    System.out.println(i + " Swimmer name: " + members.get(i).getName()); 
+                    System.out.println(i + " Swimmer Discipline(s): " + members.get(i).getDisciplines()); 
+                    System.out.println(i + " Swimmer crawl competetion time: " + members.get(i).getCrawlCompTime()); 
+                    System.out.println(i + " Swimmer crawl practice time: " + members.get(i).getCrawlPracTime()); 
+                    System.out.println(i + " Swimmer breast competetion time: " + members.get(i).getBreastCompTime()); 
+                    System.out.println(i + " Swimmer breast practice time: " + members.get(i).getBreastPracTime());
+                    System.out.println(i + " Swimmer butterfly competetion time: " + members.get(i).getButterflyCompTime()); 
+                    System.out.println(i + " Swimmer butterfly practice time: " + members.get(i).getButterflyPracTime());
+                    System.out.println("============================== ");
+                }               
+            }  
+        }
+        catch(Exception e) 
+        {
+            
+        }                  
     }
 
         public void updateCoach()
@@ -583,6 +641,7 @@ public class OS
                 {
                     edit = false;
                 }    
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
         }
         catch(Exception e) 
@@ -785,7 +844,8 @@ public class OS
                   else if (option.equals("6"))
                 {
                     edit = false;
-                }    
+                }   
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); 
             }
         }
         catch(Exception e) 
