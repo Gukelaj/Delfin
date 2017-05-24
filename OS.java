@@ -7,11 +7,11 @@ import java.io.IOException;
 
 public class OS
 {
-        Coach coach1 = new Coach("Henrik");
-        File f = new File("Members.txt");
+    Coach coach1 = new Coach("Henrik");
+    File f = new File("Members.txt");
 
-        public void startMenu()
-        {       
+    public void startMenu()
+    {       
         boolean running = true;
         while(running)
         {
@@ -20,8 +20,9 @@ public class OS
             System.out.println("2. Search member");
             System.out.println("3. Update (Coach)");
             System.out.println("4. Update (Admin)");
-            System.out.println("5. top 5");
-            System.out.println("6. Log out");
+            System.out.println("5. Top 5");
+            System.out.println("6. Arrears");
+            System.out.println("7. Log out");
             String login = System.console().readLine();
             System.out.println("==========");
 
@@ -30,28 +31,39 @@ public class OS
             {
                 createMember(); 
             }
+
             else if(login.equals ("2"))
             {
                 searchMember();
             }
+
             else if(login.equals ("3"))
             {
                 updateCoach();
             }
+
             else if(login.equals ("4"))
             {
                 updateAdmin();
             }
+
             else if(login.equals ("5"))
             {
                 topFive();
             }
-             else if(login.equals ("6"))
+
+            else if(login.equals ("6"))
+            {
+                arrears();
+            }
+
+            else if(login.equals ("7"))
             {
                 System.out.println("Bye bye");
                 break;    
             }
-             else
+
+            else
             {
                 System.out.println("Invalid option");
                 break;             
@@ -59,10 +71,10 @@ public class OS
         }
     }
 
-        public void createMember()
+    public void createMember()
+    {
+        try 
         {
-            try 
-            {
             ArrayList<Member> members = new ArrayList<Member>();
             Scanner input = new Scanner(System.in);
             Scanner scan = new Scanner(f);
@@ -123,11 +135,11 @@ public class OS
         }
         catch (Exception e)
         {
-        System.out.println(e);
+            System.out.println(e);
         }   
     }
-        public void searchMember()
-        {
+    public void searchMember()
+    {
         try 
         { 
             ArrayList<Member> members = new ArrayList<Member>();
@@ -161,10 +173,10 @@ public class OS
         }
     }
 
-        public void topFive ()
+    public void topFive()
+    {
+        try
         {
-            try
-            {
             ArrayList<Member> members = new ArrayList<Member>();    
         
             Scanner input = new Scanner(System.in);
@@ -184,7 +196,7 @@ public class OS
             }
             boolean edit = true;
  
-                for(int i = 0; i < members.size(); i++)
+            for(int i = 0; i < members.size(); i++)
             {
                 if(members.get(i).toString().toLowerCase().contains(result.toLowerCase()))
                 {
@@ -206,20 +218,20 @@ public class OS
         }                  
     }
 
-        public void updateCoach()
+    public void updateCoach()
+    {
+        try
         {
-             try
-        {
-        
+    
             ArrayList<Member> members = new ArrayList<Member>();    
-        
+    
             Scanner input = new Scanner(System.in);
             Scanner scan = new Scanner(f).useDelimiter("\\s*,\\s*");
 
-           
+        
             searchMember();
 
-             while(scan.hasNextLine())
+            while(scan.hasNextLine())
             {
                 members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextInt(), scan.nextInt(),
                 scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.next(), scan.next(),
@@ -229,7 +241,7 @@ public class OS
 
             boolean edit = true;
 
-            
+        
             System.out.print("What number do you want to update?: ");
             int number = input.nextInt();
             System.out.println("============================== ");
@@ -275,7 +287,7 @@ public class OS
                     PrintStream file = new PrintStream(f);
                     for(int i = 0; i < members.size(); i++)
                     { 
-                        
+                    
                         file.print(", " + members.get(i).getName() + " , " + members.get(i).getAge() + " , " + 
                         members.get(i).getDisciplines() + " , " + members.get(i).getCrawlCompTime() + " , " + 
                         members.get(i).getCrawlPracTime() + " , " + members.get(i).getCrawlComp() + " , " +  
@@ -291,7 +303,7 @@ public class OS
                         {
                             file.println();
                         }
-                        
+                    
                     }
                 }
 
@@ -316,7 +328,7 @@ public class OS
                         members.get(i).getBreastPlacement() + " , " + members.get(i).getMembershipStatus() + " , " +
                         members.get(i).getLevel() + " , " + members.get(i).getMemberType() + " , " +
                         members.get(i).getBalance());
-                        
+                    
                         if(i != members.size() -1)
                         {
                             file.println();
@@ -408,7 +420,7 @@ public class OS
                         }
                     }
                 }
-                
+            
                 else if (option.equals("6"))
                 {
                     System.out.println("Butterfly competetion time: ");
@@ -467,7 +479,7 @@ public class OS
                     }
                 } 
 
-                 else if (option.equals("8"))
+                else if (option.equals("8"))
                 {
                     System.out.println("Competetion you swam butterfly in: ");
                     String butterflyComp1 = System.console().readLine();
@@ -495,7 +507,7 @@ public class OS
                     }
                 }
 
-                 else if (option.equals("9"))
+                else if (option.equals("9"))
                 {
                     System.out.println("Placement in the competetion: ");
                     String butterflyPlacement1 = System.console().readLine();
@@ -523,7 +535,7 @@ public class OS
                     }
                 } 
 
-                 else if (option.equals("10"))
+                else if (option.equals("10"))
                 {
                     System.out.println("Breast competetion time: ");
                     String breastCompTime = System.console().readLine();
@@ -552,7 +564,7 @@ public class OS
                     }
                 } 
 
-                 else if (option.equals("11"))
+                else if (option.equals("11"))
                 {
                     System.out.println("Breast practice time: ");
                     String breastPracTime = System.console().readLine();
@@ -581,7 +593,7 @@ public class OS
                     }
                 } 
 
-                 else if (option.equals("12"))
+                else if (option.equals("12"))
                 {
                     System.out.println("Competetion you swam breast in: ");
                     String breastComp1 = System.console().readLine();
@@ -609,7 +621,7 @@ public class OS
                     }
                 }  
 
-                 else if (option.equals("13"))
+                else if (option.equals("13"))
                 {
                     System.out.println("Placement in the competetion: ");
                     String breastPlacement1 = System.console().readLine();
@@ -646,13 +658,13 @@ public class OS
         }
         catch(Exception e) 
         {
-            
+        
         }
     }
 
     public void updateAdmin()
-        {
-            try
+    {
+        try
         {
         
             ArrayList<Member> members = new ArrayList<Member>();    
@@ -663,7 +675,7 @@ public class OS
            
             searchMember();
 
-             while(scan.hasNextLine())
+            while(scan.hasNextLine())
             {
                 members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextInt(), scan.nextInt(),
                 scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.next(), scan.next(),
@@ -723,8 +735,7 @@ public class OS
                         if(i != members.size() -1)
                         {
                             file.println();
-                        }
-                        
+                        }   
                     }
                 }
 
@@ -841,7 +852,7 @@ public class OS
                     }
                 }
                 
-                  else if (option.equals("6"))
+                else if (option.equals("6"))
                 {
                     edit = false;
                 }   
@@ -851,6 +862,41 @@ public class OS
         catch(Exception e) 
         {
             
+        }
+    }
+
+    public void arrears()
+    {
+        try 
+        { 
+            ArrayList<Member> members = new ArrayList<Member>();
+            Scanner input = new Scanner(System.in);
+            Scanner scan = new Scanner(f);
+            scan.useDelimiter("\\s*,\\s*");
+
+
+            while(scan.hasNextLine())
+            {
+                members.add(new Member(scan.next(), scan.nextInt(), scan.next(), scan.nextInt(), scan.nextInt(),
+                scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.next(), scan.next(),
+                scan.nextInt(), scan.nextInt(), scan.next(), scan.next(), scan.next(), scan.next(), scan.next(),
+                scan.next()));
+            }
+
+            System.out.println("These members are missing a payment:");
+
+            for(int i = 0; i < members.size(); i++)
+            {
+                if(members.get(i).getBalance().contains("-"))
+                {
+                    System.out.println(i + " " + members.get(i));
+                }               
+            }
+        System.out.println("============================== ");
+        }
+        catch(Exception e) 
+        {
+            System.out.println(e);
         }
     }
 }
