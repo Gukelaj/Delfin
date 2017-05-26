@@ -93,13 +93,13 @@ public class OS
             String age = System.console().readLine();
             int age1 = Integer.parseInt(age);
 
-            System.out.println("Enter swim discipline");
+            System.out.println("Enter swim discipline (Crawl, Breast and/or Butterfly)");
             String disciplines = System.console().readLine();
 
-            System.out.println("Enter membership status");
+            System.out.println("Enter membership status (aktiv, passiv)");
             String membershipStatus = System.console().readLine();
 
-            System.out.println("Enter level");
+            System.out.println("Enter level (elite, motionist)");
             String level = System.console().readLine();
 
             // System.out.println("Enter Junior or Senior");
