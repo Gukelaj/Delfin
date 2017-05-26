@@ -24,7 +24,7 @@ public class OS
             System.out.println("7. Log out");
             String login = System.console().readLine();
             System.out.println("==========");
-
+            
                         
             if(login.equals ("1"))
             {
@@ -67,6 +67,7 @@ public class OS
                 System.out.println("Invalid option");
                 break;             
             } 
+            
         }
     }
 
@@ -96,14 +97,11 @@ public class OS
             System.out.println("Enter swim discipline (Crawl, Breast and/or Butterfly)");
             String disciplines = System.console().readLine();
 
-            System.out.println("Enter membership status (aktiv, passiv)");
+            System.out.println("Enter membership status (active or passive)");
             String membershipStatus = System.console().readLine();
 
-            System.out.println("Enter level (elite, motionist)");
+            System.out.println("Enter level (elite or amateur)");
             String level = System.console().readLine();
-
-            // System.out.println("Enter Junior or Senior");
-            // String memberType = System.console().readLine();
             
             System.out.println("Enter which balance you want to add");
             String balance = System.console().readLine();
@@ -129,7 +127,6 @@ public class OS
                 {
                     file.println();   
                 }
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
         }
         catch (Exception e)
@@ -275,7 +272,7 @@ public class OS
 
                 if (option.equals ("1"))
                 {
-                    System.out.print("Disciplines: ");
+                    System.out.print("Disciplines (Crawl, Breast and/or Butterfly): ");
                     String discipline = System.console().readLine();
                     System.out.println("============================== ");
                     members.get(number).setDisciplines(discipline);
@@ -651,7 +648,6 @@ public class OS
                 {
                     edit = false;
                 }    
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
         }
         catch(Exception e) 
@@ -768,7 +764,7 @@ public class OS
 
                 else if(option.equals("3"))
                 {
-                    System.out.print("Membership status: ");
+                    System.out.print("Membership status (active or passive): ");
                     String membershipStatus = System.console().readLine();
                     System.out.println("============================== ");
                     members.get(number).setMembershipStatus(membershipStatus);
@@ -796,7 +792,7 @@ public class OS
 
                 else if(option.equals("4"))
                 {
-                    System.out.println("Level: ");
+                    System.out.print("Level (elite or amateur: ");
                     String level = System.console().readLine();
                     System.out.println("============================== ");
                     members.get(number).setLevel(level);
@@ -824,7 +820,7 @@ public class OS
 
                 else if (option.equals("5"))
                 {
-                    System.out.println("Balance: ");
+                    System.out.print("Balance: ");
                     String balance = System.console().readLine();
                     System.out.println("============================== ");
                     members.get(number).setBalance(balance);
@@ -853,8 +849,7 @@ public class OS
                 else if (option.equals("6"))
                 {
                     edit = false;
-                }   
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); 
+                }    
             }
         }
         catch(Exception e) 
@@ -888,10 +883,13 @@ public class OS
                 if(members.get(i).getBalance().contains("-"))
                 {
                     System.out.println(i + " " + members.get(i));
-                }               
+                }  
+                             
             }
         System.out.println("============================== ");
         }
+       
+        
         catch(Exception e) 
         {
             System.out.println(e);

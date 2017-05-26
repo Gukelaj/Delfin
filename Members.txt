@@ -1,4 +1,4 @@
-, Nikolaj Larsen , 20 , d , 0 , 0 , minus , minus , 0 , 0 , minus , minus , 0 , 0 , minus , minus , f , g , Adult , -500
+, Nikolaj Larsen , 20 , d , 0 , 0 , minus , minus , 0 , 0 , minus , minus , 0 , 0 , minus , minus , Active , Elite , Adult , -500
 , Lars Larsen , 4 , Crawl , 5 , 0 , minus , minus , 0 , 0 , minus , minus , 0 , 0 , minus , minus , Active , Elite , Junior , -100
 , Nikolaj , 15 , Crawl , 40 , 0 , minus , minus , 0 , 110 , minus , minus , 0 , 0 , Helsinge turnering , minus , Active , Elite , Junior , 400
 , Silas , 20 , crawl , 0 , 0 , minus , minus , 0 , 0 , minus , minus , 0 , 0 , minus , minus , aktiv , elite , Adult , 400
