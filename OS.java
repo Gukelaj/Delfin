@@ -183,8 +183,7 @@ public class OS
             Scanner scan = new Scanner(f).useDelimiter("\\s*,\\s*");
 
 
-            System.out.print("type elite: ");
-            String result = input.nextLine();
+            System.out.println("Elite Swimmers ");
             System.out.println("============================== ");
 
             while(scan.hasNextLine())
@@ -198,16 +197,16 @@ public class OS
  
             for(int i = 0; i < members.size(); i++)
             {
-                if(members.get(i).toString().toLowerCase().contains(result.toLowerCase()))
+                if(members.get(i).getLevel().toLowerCase().contains("elite"))
                 {
-                    System.out.println(i + " Swimmer name: " + members.get(i).getName()); 
-                    System.out.println(i + " Swimmer Discipline(s): " + members.get(i).getDisciplines()); 
-                    System.out.println(i + " Swimmer crawl competetion time: " + members.get(i).getCrawlCompTime()); 
-                    System.out.println(i + " Swimmer crawl practice time: " + members.get(i).getCrawlPracTime()); 
-                    System.out.println(i + " Swimmer breast competetion time: " + members.get(i).getBreastCompTime()); 
-                    System.out.println(i + " Swimmer breast practice time: " + members.get(i).getBreastPracTime());
-                    System.out.println(i + " Swimmer butterfly competetion time: " + members.get(i).getButterflyCompTime()); 
-                    System.out.println(i + " Swimmer butterfly practice time: " + members.get(i).getButterflyPracTime());
+                    System.out.println(" Swimmer name: " + members.get(i).getName()); 
+                    System.out.println(" Swimmer Discipline(s): " + members.get(i).getDisciplines()); 
+                    System.out.println(" Swimmer crawl competetion time: " + members.get(i).getCrawlCompTime()); 
+                    System.out.println(" Swimmer crawl practice time: " + members.get(i).getCrawlPracTime()); 
+                    System.out.println(" Swimmer breast competetion time: " + members.get(i).getBreastCompTime()); 
+                    System.out.println(" Swimmer breast practice time: " + members.get(i).getBreastPracTime());
+                    System.out.println(" Swimmer butterfly competetion time: " + members.get(i).getButterflyCompTime()); 
+                    System.out.println(" Swimmer butterfly practice time: " + members.get(i).getButterflyPracTime());
                     System.out.println("============================== ");
                 }               
             }  

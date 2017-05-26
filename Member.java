@@ -20,7 +20,7 @@ public class Member
     private String breastPlacement;
 
     private String membershipStatus; // aktiv eller passiv
-    private String level; // konkurrence eller motionist
+    private String level; // elite eller motionist
     private String memberType; // junior, adult og senior
     private String balance; // penge
 
