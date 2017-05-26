@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class OS
 {
-    Coach coach1 = new Coach("Henrik");
     File f = new File("Members.txt");
 
     public void startMenu()
